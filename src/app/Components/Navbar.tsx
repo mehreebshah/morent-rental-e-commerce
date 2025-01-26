@@ -6,8 +6,8 @@ import profile from "../../../public/Image.png";
 import { GoSearch } from "react-icons/go";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { IoMdSettings } from "react-icons/io";
-import { GiCartwheel } from "react-icons/gi";
 import { IoIosHeartEmpty } from "react-icons/io";
+import { CiBellOn } from "react-icons/ci";
 import Link from "next/link";
 import { useWishlist} from "../context/wishlistContext";
 const Navbar = () => {
@@ -70,7 +70,7 @@ const Navbar = () => {
               <IoMdSettings className="w-7 h-7" />
             </Link>
             <Link href="/menu" className="relative group hover:text-blue-400">
-              <GiCartwheel className="w-7 h-7" />
+              <CiBellOn className="w-7 h-7" />
             </Link>
           </ul>
         </div>
@@ -105,14 +105,22 @@ const Navbar = () => {
 
         {/* Settings Icon */}
         <Link href="/settings" className="relative group hover:text-blue-400">
-          <IoMdSettings className="w-7 h-7" />
+          <CiBellOn className="w-7 h-7" />
         </Link>
         <Link href="/menu" className="relative group hover:text-blue-400">
-          <GiCartwheel className="w-7 h-7" />
+          <IoMdSettings className="w-7 h-7" />
         </Link>
 
         {/* Profile Section */}
-        <div className="relative">login</div>
+        <div className="relative">
+        <Image
+            src={profile}
+            alt="profile"
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
+        </div>
       </div>
     </nav>
   );
