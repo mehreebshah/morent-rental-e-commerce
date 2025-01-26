@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import { client } from "@/sanity/lib/client";
+import Image from "next/image";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -125,9 +126,11 @@ const Sidebar = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
           {cars.map((car) => (
             <div key={car.slug} className="border rounded-lg p-4 shadow-md">
-              <img
+              <Image
                 src={car.image.asset.url}
                 alt={car.name}
+                width={300}
+                height={200}
                 className="object-cover rounded"
               />
               <h3 className="text-lg font-semibold mt-2">{car.name}</h3>
